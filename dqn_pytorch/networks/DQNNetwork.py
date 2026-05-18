@@ -6,7 +6,7 @@ from dqn_pytorch.encoders import NatureDQNEncoder
 class DQNNetwork(torch.nn.Module):
     def __init__(
         self,
-        action_space: int,
+        action_dimension: int,
         embedding_dimension: int,
         activation: Type[torch.nn.Module],
     ):
@@ -15,7 +15,7 @@ class DQNNetwork(torch.nn.Module):
         self.q_stream = torch.nn.Sequential(
             torch.nn.Linear(3136, embedding_dimension),
             activation(),
-            torch.nn.Linear(embedding_dimension, action_space),
+            torch.nn.Linear(embedding_dimension, action_dimension),
         )
 
     def forward(self, x):
