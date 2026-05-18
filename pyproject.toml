@@ -19,7 +19,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["torch", "gymnasium", "numpy", "ale-py"]
+dependencies = ["torch", "gymnasium", "numpy", "ale-py", "baloot"]
 keywords = ["deep learning", "dqn", "deep q network"]
 license = { file = "LICENSE" }
 urls = { Homepage="https://github.com/tahashieenavaz/dqn-pytorch", Repository="https://github.com/tahashieenavaz/dqn-pytorch", Documentation="https://github.com/tahashieenavaz/dqn-pytorch#readme" }
