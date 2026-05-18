@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dqn-pytorch"
+version = "0.0.01"
+authors = [
+  { name="Taha Shieenavaz", email="tahashieenavaz@gmail.com" },
+]
+description = "A fast implementation of DQN in PyTorch."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["torch", "gymnasium", "numpy", "ale-py"]
+keywords = ["deep learning", "dqn", "deep q network"]
+license = { file = "LICENSE" }
+urls = { Homepage="https://github.com/tahashieenavaz/dqn-pytorch", Repository="https://github.com/tahashieenavaz/dqn-pytorch", Documentation="https://github.com/tahashieenavaz/dqn-pytorch#readme" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*", "docs*"]
+
+[tool.setuptools.package-data]
+dqn_pytorch = ["*.md", "*.txt", "*.png"]
