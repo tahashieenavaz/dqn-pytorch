@@ -1,4 +1,5 @@
 import gymnasium
+from dqn_pytorch.wrappers import FireResetEnvironment
 
 
 def make_environment(environment_name: str, seed: int):
@@ -13,8 +14,11 @@ def make_environment(environment_name: str, seed: int):
             grayscale_obs=True,
             grayscale_newaxis=False,
         )
+
+        # this line is adapted from cleanrl
         if "FIRE" in env.unwrapped.get_action_meanings():
-            env = FireResetEnv(env)
+            env = FireResetEnvironment(env)
+
         env = gymnasium.wrappers.ClipReward(env, min_reward=-1.0, max_reward=1.0)
         env = gymnasium.wrappers.FrameStack(env, 4)
         env.action_space.seed(seed)
